@@ -157,10 +157,10 @@ function Bubbles(container, self, options) {
       }
     }
     orderBubbles(turn.says, function() {
-      bubbleTyping.classList.remove("imagine")
-      questionsHTML !== ""
-        ? addBubble(questionsHTML, function() {}, "reply")
-        : bubbleTyping.classList.add("imagine")
+      if (questionsHTML !== "") {
+        bubbleTyping.classList.remove("imagine")
+        addBubble(questionsHTML, function() {}, "reply")
+      }
     })
   }
   // navigate "answers"
